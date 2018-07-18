@@ -4,12 +4,7 @@ import { QuestionService } from './dynamic-form-example/dynamic-form-question/qu
 
 @Component({
     selector: 'app-root',
-    template: `
-    <div>
-      <h2>Job Application for Heroes</h2>
-      <app-dynamic-form [questions]="questions"></app-dynamic-form>
-    </div>
-  `,
+    templateUrl: './app.html',
     providers: [QuestionService],
     styleUrls: ['./dynamic-form-example/style.scss']
 })
