@@ -35,10 +35,19 @@ export class TextboxQuestion extends QuestionBase<string> {
 
 export class DropdownQuestion extends QuestionBase<string> {
     controlType = 'dropdown';
-    options: { key: string, value: string }[] = [];
+    options: { key: string, value: string } [] = [];
 
     constructor(options: {} = {}) {
         super(options);
         this.options = options['options'] || [];
+    }
+}
+
+export class TextAreaQuestion extends QuestionBase<string> {
+    controlType = 'textarea';
+    options: { key: string, value: string } [] = [];
+
+    constructor(options: {} = {}) {
+        super(options);
     }
 }
