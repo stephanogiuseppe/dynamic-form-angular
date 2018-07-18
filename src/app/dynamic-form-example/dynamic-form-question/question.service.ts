@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import {
     QuestionBase,
     DropdownQuestion,
-    TextboxQuestion
+    TextboxQuestion,
+    TextAreaQuestion
 } from './question-base.model';
 
 @Injectable()
@@ -15,32 +16,56 @@ export class QuestionService {
 
         const questions: QuestionBase<any>[] = [
 
-            new DropdownQuestion({
-                key: 'brave',
-                label: 'Bravery Rating',
-                options: [
-                    { key: 'solid', value: 'Solid' },
-                    { key: 'great', value: 'Great' },
-                    { key: 'good', value: 'Good' },
-                    { key: 'unproven', value: 'Unproven' }
-                ],
-                order: 3
-            }),
-
             new TextboxQuestion({
-                key: 'firstName',
-                label: 'First name',
-                value: 'Bombasto',
+                key: 'texto',
+                label: 'Nome',
+                value: 'Stéphano',
                 required: true,
                 order: 1
             }),
 
             new TextboxQuestion({
-                key: 'emailAddress',
-                label: 'Email',
-                type: 'email',
+                key: 'numero',
+                value: '',
+                label: 'Número',
+                type: 'number',
                 order: 2
-            })
+            }),
+
+            new TextboxQuestion({
+                key: 'data',
+                value: '',
+                label: 'Data',
+                type: 'date',
+                order: 3
+            }),
+
+            new TextAreaQuestion({
+                key: 'textolongo',
+                value: '',
+                label: 'Campo de texto livre',
+                order: 4
+            }),
+
+            new TextboxQuestion({
+                key: 'arquivo',
+                value: '',
+                label: 'Arquivo',
+                type: 'file',
+                order: 5
+            }),
+
+            new DropdownQuestion({
+                key: 'cor',
+                label: 'Cor',
+                options: [
+                    { key: 'branco', value: 'Branco' },
+                    { key: 'preto', value: 'Preto' },
+                    { key: 'azul', value: 'Azul' },
+                    { key: 'amarelo', value: 'Amarelo' }
+                ],
+                order: 6
+            }),
         ];
 
         return questions.sort((a, b) => a.order - b.order);
